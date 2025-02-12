@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  .imageLink {
+    flex: none;
+    display: flex;
+    justify-content: center;
+    width: 75px;
+
+    .image {
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  .album {
+    flex: none;
+    width: 80px;
+  }
+
+  .title {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
