@@ -1,8 +1,13 @@
 .root {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   width: 100%;
   max-width: 800px;
+  height: 100vh;
   padding: 40px 15px;
   margin: auto;
+  box-sizing: border-box;
 
   .error {
     color: red;

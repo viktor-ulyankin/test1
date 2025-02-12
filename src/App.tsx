@@ -11,8 +11,7 @@ const App: React.FC = () => {
   return (
     <div className={styles.root}>
       {errorMessage && <div className={styles.error}>{errorMessage}</div>}
-
-      {isLoading ? "Loading..." : <List list={data ?? []} />}
+      {isLoading ? "Loading..." : <List list={data || []} />}
     </div>
   );
 };
