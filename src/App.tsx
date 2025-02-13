@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import styles from "./App.module.css";
 import { useFetch } from "./hooks/useFetch";
 import { List } from "./List";
-import { IPhotoList } from "./models";
+import { IPostList } from "./models";
 import { ITEMS_URL } from "./constants";
 import { titleFilter } from "./helpers/titleFilter";
 import { Search } from "./Search";
 
 const App: React.FC = () => {
-  const { data, isLoading, errorMessage } = useFetch<IPhotoList>(ITEMS_URL);
+  const { data, isLoading, errorMessage } = useFetch<IPostList>(ITEMS_URL);
   const [list, setList] = useState(data);
   const [search, setSearch] = useState("");
 

@@ -1,12 +1,12 @@
 import React from "react";
-import { IPhotoList } from "./models";
+import { IPostList } from "./models";
 import styles from "./List.module.css";
 import { Item } from "./Item";
 import { FixedSizeList } from "react-window";
 import AutoSizer, { Size } from "react-virtualized-auto-sizer";
 
 type Props = {
-  list: IPhotoList;
+  list: IPostList;
 };
 
 export const List: React.FC<Props> = React.memo(({ list }) => {
@@ -21,15 +21,15 @@ export const List: React.FC<Props> = React.memo(({ list }) => {
             width={width}
           >
             {({ index, style }) => {
-              const { albumId, id, title, url, thumbnailUrl } = list[index];
+              const { id, title, url, thumbnail, category } = list[index];
 
               return (
                 <div key={id} style={style}>
                   <Item
-                    albumId={albumId}
                     title={title}
                     url={url}
-                    thumbnailUrl={thumbnailUrl}
+                    thumbnail={thumbnail}
+                    category={category}
                   />
                 </div>
               );

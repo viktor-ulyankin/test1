@@ -17,14 +17,12 @@
     }
   }
 
-  .album {
+  .category {
     flex: none;
     width: 80px;
+    word-break: break-word;
   }
 
   .title {
-    &::first-letter {
-      text-transform: uppercase;
-    }
   }
 }

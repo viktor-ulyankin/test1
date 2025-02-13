@@ -1,9 +1,17 @@
-export type IPhoto = {
-  albumId: number;
+export enum Category {
+  LOREM = "lorem",
+  JSONPLACEHOLDER = "jsonplaceholder",
+  IPSUM = "ipsum",
+  RUTRUM = "rutrum",
+  ELEMENTUM = "elementum",
+}
+
+export type IPost = {
   id: number;
   title: string;
   url: string;
-  thumbnailUrl: string;
+  thumbnail: string;
+  category: Category;
 };
 
-export type IPhotoList = IPhoto[];
+export type IPostList = IPost[];
