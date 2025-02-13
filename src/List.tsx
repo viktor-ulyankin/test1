@@ -9,7 +9,7 @@ type Props = {
   list: IPhotoList;
 };
 
-export const List: React.FC<Props> = ({ list }) => {
+export const List: React.FC<Props> = React.memo(({ list }) => {
   return (
     <ul className={styles.list}>
       <AutoSizer>
@@ -39,4 +39,4 @@ export const List: React.FC<Props> = ({ list }) => {
       </AutoSizer>
     </ul>
   );
-};
+});
