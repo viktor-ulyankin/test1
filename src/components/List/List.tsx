@@ -1,7 +1,7 @@
 import React from "react";
-import { IPostList } from "./models";
+import { IPostList } from "../../models";
 import styles from "./List.module.css";
-import { Item } from "./Item";
+import { Item } from "../Item";
 import { FixedSizeList } from "react-window";
 import AutoSizer, { Size } from "react-virtualized-auto-sizer";
 

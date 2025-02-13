@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { Category } from "./models";
+import { Category } from "../../models";
 
 type Value = Category | "";
 

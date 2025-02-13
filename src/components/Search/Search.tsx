@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import styles from "./Search.module.css";
-import { useDebounce } from "./hooks/useDebounce";
+import { useDebounce } from "../../hooks/useDebounce";
 
 type Props = {
   onDebounceChange: (value: string) => void;
