@@ -18,12 +18,20 @@ export const Search: React.FC<Props> = ({ onDebounceChange }) => {
     setValue(e.target.value);
   };
 
+  const handleInputClear = () => {
+    setValue("");
+  };
+
   return (
-    <input
-      onChange={handleInputChange}
-      value={value}
-      className={styles.searchinput}
-      placeholder="Search by name"
-    />
+    <div className={styles.root}>
+      <input
+        onChange={handleInputChange}
+        value={value}
+        className={styles.input}
+        placeholder="Search by name"
+      />
+
+      <div className={styles.clear} onClick={handleInputClear} />
+    </div>
   );
 };

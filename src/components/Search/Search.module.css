@@ -1,6 +1,30 @@
-.searchinput {
+.root {
   width: 100%;
-  padding: 10px;
-  border: 1px solid grey;
-  border-radius: 5px;
+  position: relative;
+
+  .input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+
+  .clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 5px 10px 10px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+
+    &::before {
+      content: "𐄂";
+      font-size: 20px;
+    }
+  }
 }
