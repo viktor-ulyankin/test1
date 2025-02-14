@@ -2,11 +2,21 @@ import React from "react";
 import { IPostList } from "../../models";
 import styles from "./List.module.css";
 import { Item } from "../Item";
-import { FixedSizeList } from "react-window";
+import { FixedSizeList, ListChildComponentProps } from "react-window";
 import AutoSizer, { Size } from "react-virtualized-auto-sizer";
 
 type Props = {
   list: IPostList;
+};
+
+const Row = ({ data, index, style }: ListChildComponentProps) => {
+  const { id, title, url, thumbnail, category } = data[index];
+
+  return (
+    <div key={id} style={style} data-id={id}>
+      <Item title={title} url={url} thumbnail={thumbnail} category={category} />
+    </div>
+  );
 };
 
 export const List: React.FC<Props> = React.memo(({ list }) => {
@@ -19,21 +29,9 @@ export const List: React.FC<Props> = React.memo(({ list }) => {
             itemCount={list.length}
             itemSize={100}
             width={width}
+            itemData={list}
           >
-            {({ index, style }) => {
-              const { id, title, url, thumbnail, category } = list[index];
-
-              return (
-                <div key={id} style={style}>
-                  <Item
-                    title={title}
-                    url={url}
-                    thumbnail={thumbnail}
-                    category={category}
-                  />
-                </div>
-              );
-            }}
+            {Row}
           </FixedSizeList>
         )}
       </AutoSizer>
